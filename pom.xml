@@ -12,7 +12,7 @@
   <artifactId>junit-guice-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>junit-guice Parent</name>
+  <name>JUnit Guice :: Parent</name>
   <description>Tools for using Guice with JUnit</description>
   <url>http://github.com/ctrimble/junit-guice</url>
   <inceptionYear>2016</inceptionYear>

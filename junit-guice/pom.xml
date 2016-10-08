@@ -10,7 +10,7 @@
   <groupId>com.xiantrimble.guice</groupId>
   <artifactId>junit-guice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>junit-guice</name>
+  <name>JUnit Guice</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

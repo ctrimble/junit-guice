@@ -9,10 +9,10 @@
   </parent>
 
   <groupId>com.xiantrimble.guice</groupId>
-  <artifactId>junit-guice-parent</artifactId>
+  <artifactId>junit-guice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>JUnit Guice :: Parent</name>
+  <packaging>jar</packaging>
+  <name>JUnit Guice</name>
   <description>Tools for using Guice with JUnit</description>
   <url>http://github.com/ctrimble/junit-guice</url>
   <inceptionYear>2016</inceptionYear>
@@ -46,10 +46,15 @@
   <dependencyManagement>
   <dependencies>
     <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-      <scope>test</scope>
+      <scope>compile</scope>
         <exclusions>
           <exclusion>
             <groupId>org.hamcrest</groupId>
@@ -71,6 +76,16 @@
     </dependency>
   </dependencies>
   </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+    </dependency>
+  </dependencies>
   <build>
     <pluginManagement>
       <plugins>
@@ -108,75 +123,6 @@
             </execution>
           </executions>
         </plugin>
-        <plugin>
-          <groupId>org.jsonschema2pojo</groupId>
-          <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-          <version>0.4.12</version>
-          <configuration>
-            <sourceDirectory>${basedir}/src/main/jsonschema</sourceDirectory>
-            <outputDirectory>${project.build.directory}/generated-sources/jsonschema</outputDirectory>
-            <sourceType>jsonschema</sourceType>
-            <generateBuilders>true</generateBuilders>
-            <includeHashcodeAndEquals>true</includeHashcodeAndEquals>
-            <includeToString>true</includeToString>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-shade-plugin</artifactId>
-          <version>2.1</version>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>shade</goal>
-              </goals>
-              <configuration>
-                <createDependencyReducedPom>false</createDependencyReducedPom>
-                <filters>
-                  <filter>
-                    <artifact>*:*</artifact>
-                    <excludes>
-                      <exclude>META-INF/*.SF</exclude>
-                      <exclude>META-INF/*.DSA</exclude>
-                      <exclude>META-INF/*.RSA</exclude>
-                    </excludes>
-                  </filter>
-                </filters>
-                <transformers>
-                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                    <mainClass>${application.class}</mainClass>
-                  </transformer>
-                  <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                </transformers>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.skife.maven</groupId>
-          <artifactId>really-executable-jar-maven-plugin</artifactId>
-          <version>1.0.5</version>
-          <configuration>
-            <programFile>${application.name}</programFile>
-            <flags>-Djava.net.preferIPv4Stack=true</flags>
-          </configuration>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>really-executable-jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -199,7 +145,7 @@
               <property>root.directory</property>
               <project>
                 <groupId>com.xiantrimble.guice</groupId>
-                <artifactId>junit-guice-parent</artifactId>
+                <artifactId>junit-guice</artifactId>
               </project>
             </configuration>
           </execution>
@@ -207,7 +153,4 @@
       </plugin>
     </plugins>
   </build>
-  <modules>
-    <module>junit-guice</module>
-  </modules>
 </project>

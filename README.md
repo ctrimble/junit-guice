@@ -23,14 +23,14 @@ modules you wish to use.
       .build();
 ```
 
-Then define some fields to inject
+Finally, define some fields to inject.
 
 ```
   @Inject
   public MyType myValue;
 ```
 
-You can use the GuiceRule with other rules using the RuleChain.
+If you need to use the GuiceRule with other rules, then include it in a RuleChain.
 
 ```
 import org.junit.rules.RuleChain;

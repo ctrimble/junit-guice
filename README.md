@@ -1,5 +1,7 @@
 # JUnit Guice
 
+[![Build Status](https://secure.travis-ci.org/ctrimble/junit-guice.png?branch=develop)](https://travis-ci.org/ctrimble/junit-guice)
+
 Tools for using Guice with JUnit
 
 ## JUnit 4 Rule
@@ -43,5 +45,3 @@ import org.junit.rules.RuleChain;
         .outerRule(otherRule)
         .around(guiceRule);
 ```
-
-[![Build Status](https://secure.travis-ci.org/ctrimble/junit-guice.png?branch=develop)](https://travis-ci.org/ctrimble/junit-guice)

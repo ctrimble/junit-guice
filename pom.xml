@@ -8,7 +8,7 @@
     <version>2-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.xiantrimble.guice</groupId>
+  <groupId>com.xiantrimble.junit</groupId>
   <artifactId>junit-guice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -144,7 +144,7 @@
             <configuration>
               <property>root.directory</property>
               <project>
-                <groupId>com.xiantrimble.guice</groupId>
+                <groupId>com.xiantrimble.junit</groupId>
                 <artifactId>junit-guice</artifactId>
               </project>
             </configuration>
